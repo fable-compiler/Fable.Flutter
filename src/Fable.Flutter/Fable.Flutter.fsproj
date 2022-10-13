@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Fable bindings for Flutter API</Description>
+    <Version>0.0.0</Version>
+    <PackageVersion>0.0.0</PackageVersion>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="*.fsproj; *.fs" PackagePath="fable\" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Dart.fs" />
+    <Compile Include="Dart.UI.fs" />
+    <Compile Include="Dart.VectorMath.fs" />
+    <Compile Include="Flutter.Foundation.fs" />
+    <Compile Include="Flutter.Gestures.fs" />
+    <Compile Include="Flutter.Services.fs" />
+    <Compile Include="Flutter.Painting.fs" />
+    <Compile Include="Flutter.Semantics.fs" />
+    <Compile Include="Flutter.Scheduler.fs" />
+    <Compile Include="Flutter.Animation.fs" />
+    <Compile Include="Flutter.Rendering.fs" />
+    <Compile Include="Flutter.Widgets.fs" />
+    <Compile Include="Flutter.Material.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fable.Core" Version="4.0.0-theta-005" />
+  </ItemGroup>
+
+</Project>

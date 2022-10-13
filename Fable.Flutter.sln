@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{87F8FFE4-2189-4F6A-B996-CB6CB399FB42}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fable.Flutter", "src\Fable.Flutter\Fable.Flutter.fsproj", "{B008A12A-E2BD-4B3E-B367-69982ADC2EC5}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Elmish.Flutter", "src\Elmish.Flutter\Elmish.Flutter.fsproj", "{EA3DF20A-4D34-415F-ADE8-FBD8FC38CDCB}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "App", "src\App\App.fsproj", "{FEE164A8-A233-4118-8728-5734DA9975DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B008A12A-E2BD-4B3E-B367-69982ADC2EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B008A12A-E2BD-4B3E-B367-69982ADC2EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B008A12A-E2BD-4B3E-B367-69982ADC2EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B008A12A-E2BD-4B3E-B367-69982ADC2EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3DF20A-4D34-415F-ADE8-FBD8FC38CDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3DF20A-4D34-415F-ADE8-FBD8FC38CDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3DF20A-4D34-415F-ADE8-FBD8FC38CDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3DF20A-4D34-415F-ADE8-FBD8FC38CDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEE164A8-A233-4118-8728-5734DA9975DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEE164A8-A233-4118-8728-5734DA9975DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEE164A8-A233-4118-8728-5734DA9975DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEE164A8-A233-4118-8728-5734DA9975DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B008A12A-E2BD-4B3E-B367-69982ADC2EC5} = {87F8FFE4-2189-4F6A-B996-CB6CB399FB42}
+		{EA3DF20A-4D34-415F-ADE8-FBD8FC38CDCB} = {87F8FFE4-2189-4F6A-B996-CB6CB399FB42}
+		{FEE164A8-A233-4118-8728-5734DA9975DE} = {87F8FFE4-2189-4F6A-B996-CB6CB399FB42}
+	EndGlobalSection
+EndGlobal
