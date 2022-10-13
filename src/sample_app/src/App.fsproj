@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="main.fs" />
+  </ItemGroup>
+
+  <!-- To test libraries locally, remember to pass `exclude Fable.Flutter` option to Fable -->
+  <!-- <ItemGroup>
+    <ProjectReference Include="..\..\Fable.Flutter\Fable.Flutter.fsproj" />
+    <ProjectReference Include="..\..\Elmish.Flutter\Elmish.Flutter.fsproj" />
+  </ItemGroup> -->
+
+  <ItemGroup>
+    <PackageReference Include="Fable.Flutter" Version="1.0.0-beta-001" />
+    <PackageReference Include="Elmish.Flutter" Version="1.0.0-beta-001" />
+  </ItemGroup>
+
+</Project>
