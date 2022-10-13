@@ -12,11 +12,11 @@ open System
 /// Dispatch - feed new message into the processing loop
 type Dispatch<'msg> = 'msg -> unit
 
-/// Subscription - return immediately, but may schedule dispatch of a message at any time
-type Sub<'msg> = Dispatch<'msg> -> unit
+/// Effect - return immediately, but may schedule dispatch of a message at any time
+type Effect<'msg> = Dispatch<'msg> -> unit
 
-/// Cmd - container for subscriptions that may produce messages
-type Cmd<'msg> = Sub<'msg> list
+/// Cmd - container for effects that may produce messages
+type Cmd<'msg> = Effect<'msg> list
 
 /// Cmd module for creating and manipulating commands
 [<RequireQualifiedAccess>]
@@ -37,9 +37,9 @@ module Cmd =
     let batch (cmds: #seq<Cmd<'msg>>) : Cmd<'msg> =
         cmds |> List.concat
 
-    /// Command to call the subscriber
-    let ofSub (sub: Sub<'msg>) : Cmd<'msg> =
-        [sub]
+    /// Command to call the effect
+    let ofEffect (effect: Effect<'msg>) : Cmd<'msg> =
+        [effect]
 
     module OfFunc =
         /// Command to evaluate a simple function and map the result
@@ -77,7 +77,7 @@ module Cmd =
     module OfAsyncWith =
         /// Command that will evaluate an async block and map the result
         /// into success or error (of exception)
-        let either (start: Async<unit> -> unit) 
+        let either (start: Async<unit> -> unit)
                    (task: 'a -> Async<_>)
                    (arg: 'a)
                    (ofSuccess: _ -> 'msg)
@@ -92,7 +92,7 @@ module Cmd =
             [bind >> start]
 
         /// Command that will evaluate an async block and map the success
-        let perform (start: Async<unit> -> unit) 
+        let perform (start: Async<unit> -> unit)
                     (task: 'a -> Async<_>)
                     (arg: 'a)
                     (ofSuccess: _ -> 'msg) : Cmd<'msg> =
@@ -106,7 +106,7 @@ module Cmd =
             [bind >> start]
 
         /// Command that will evaluate an async block and map the error (of exception)
-        let attempt (start: Async<unit> -> unit) 
+        let attempt (start: Async<unit> -> unit)
                     (task: 'a -> Async<_>)
                     (arg: 'a)
                     (ofError: _ -> 'msg) : Cmd<'msg> =
@@ -124,7 +124,7 @@ module Cmd =
         let start x = Timer.delay 1 (fun _ -> Async.StartImmediate x)
 #else
         let inline start x = Async.Start x
-#endif    
+#endif
         /// Command that will evaluate an async block and map the result
         /// into success or error (of exception)
         let inline either (task: 'a -> Async<_>)
