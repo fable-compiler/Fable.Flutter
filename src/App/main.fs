@@ -46,7 +46,7 @@ module App =
             { model with todos = todos }, Cmd.none
 
     let displayDialog text dispatch (context: BuildContext) =
-        Material.showDialog(
+        showDialog(
             context = context,
             builder = (fun context ->
                 AlertDialog(
@@ -122,4 +122,4 @@ type MyApp (?key: Key) =
         )
 
 let main() =
-    MyApp() |> Widgets.runApp
+    MyApp() |> runApp

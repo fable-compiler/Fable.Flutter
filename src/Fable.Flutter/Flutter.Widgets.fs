@@ -3073,8 +3073,9 @@ type WidgetSpan [<IsConst; NamedParams>] (child: Widget, [<Optional>] alignment:
 type WillPopScope [<IsConst; NamedParams>] (child: Widget, onWillPop: (unit -> Future<bool>), [<Optional>] key: Key) =
   inherit Widget()
 
+[<AutoOpen>]
 [<ImportAll("package:flutter/widgets.dart")>]
-type Widgets =
+type Functions =
   /// https://api.flutter.dev/flutter/widgets/basicLocaleListResolution.html
   static member basicLocaleListResolution(preferredLocales: DartNullable<Locale[]>, supportedLocales: Locale seq): Locale = nativeOnly
   /// https://api.flutter.dev/flutter/widgets/getAxisDirectionFromAxisReverseAndDirectionality.html
