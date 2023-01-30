@@ -286,6 +286,7 @@ type EdgeInsetsGeometry [<IsConst>] () =
 /// https://api.flutter.dev/flutter/painting/EdgeInsets-class.html
 [<ImportMember("package:flutter/painting.dart")>]
 type EdgeInsets =
+  inherit EdgeInsetsGeometry
   [<IsConst>] static member fromLTRB(left: float, top: float, right: float, bottom: float): EdgeInsets = nativeOnly
   [<IsConst>] static member all(value: float): EdgeInsets = nativeOnly
   [<IsConst; NamedParams>] static member only([<Optional>] left: float, [<Optional>] top: float, [<Optional>] right: float, [<Optional>] bottom: float): EdgeInsets = nativeOnly
