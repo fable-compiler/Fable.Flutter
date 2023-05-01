@@ -31,3 +31,6 @@ type Pattern private () =
 type num private () =
   [<Emit("$0")>] new (pattern: int) = num()
   [<Emit("$0")>] new (pattern: float) = num()
+
+[<Global>]
+type Object() = class end

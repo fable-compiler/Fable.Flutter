@@ -1720,6 +1720,10 @@ type MediaQuery [<IsConst; NamedParams>] (data: MediaQueryData, child: Widget, [
   [<NamedParams>] static member removeViewInsets(context: BuildContext, child: Widget, [<Optional>] key: Key, [<Optional>] removeLeft: bool, [<Optional>] removeTop: bool, [<Optional>] removeRight: bool, [<Optional>] removeBottom: bool): MediaQuery = nativeOnly
   [<NamedParams>] static member removeViewPadding(context: BuildContext, child: Widget, [<Optional>] key: Key, [<Optional>] removeLeft: bool, [<Optional>] removeTop: bool, [<Optional>] removeRight: bool, [<Optional>] removeBottom: bool): MediaQuery = nativeOnly
 
+[<RequireQualifiedAccess>]
+module MediaQuery =
+  let inline of' (context: BuildContext) : MediaQueryData = emitExpr (import "MediaQuery" "package:flutter/widgets.dart", context) "$0.of($1)"
+
 /// https://api.flutter.dev/flutter/widgets/ModalBarrier-class.html
 [<ImportMember("package:flutter/widgets.dart")>]
 type ModalBarrier [<IsConst; NamedParams>] ([<Optional>] key: Key, [<Optional>] color: Color, [<Optional>] dismissible: bool, [<Optional>] onDismiss: (unit -> unit), [<Optional>] semanticsLabel: string, [<Optional>] barrierSemanticsDismissible: bool) =

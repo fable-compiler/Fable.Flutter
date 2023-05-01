@@ -109,6 +109,7 @@ type AlignmentGeometry [<IsConst>] () =
 /// https://api.flutter.dev/flutter/painting/Alignment-class.html
 [<ImportMember("package:flutter/painting.dart")>]
 type Alignment [<IsConst>] (x: float, y: float) =
+  inherit AlignmentGeometry()
   [<IsConst>] static member topLeft: Alignment = nativeOnly
   [<IsConst>] static member topCenter: Alignment = nativeOnly
   [<IsConst>] static member topRight: Alignment = nativeOnly
@@ -122,6 +123,7 @@ type Alignment [<IsConst>] (x: float, y: float) =
 /// https://api.flutter.dev/flutter/painting/AlignmentDirectional-class.html
 [<ImportMember("package:flutter/painting.dart")>]
 type AlignmentDirectional [<IsConst>] (start: float, y: float) =
+  inherit AlignmentGeometry()
   [<IsConst>] static member topStart: AlignmentDirectional = nativeOnly
   [<IsConst>] static member topCenter: AlignmentDirectional = nativeOnly
   [<IsConst>] static member topEnd: AlignmentDirectional = nativeOnly
@@ -152,6 +154,7 @@ type BorderRadiusGeometry [<IsConst>] () =
 /// https://api.flutter.dev/flutter/painting/BorderRadius-class.html
 [<ImportMember("package:flutter/painting.dart")>]
 type BorderRadius =
+  inherit BorderRadiusGeometry
   [<IsConst>] static member all(radius: Radius): BorderRadius = nativeOnly
   static member circular(radius: float): BorderRadius = nativeOnly
   [<IsConst; NamedParams>] static member vertical([<Optional>] top: Radius, [<Optional>] bottom: Radius): BorderRadius = nativeOnly
@@ -204,7 +207,7 @@ type BorderDirectional [<IsConst; NamedParams>] ([<Optional>] top: BorderSide, [
 /// https://api.flutter.dev/flutter/painting/BoxDecoration-class.html
 [<ImportMember("package:flutter/painting.dart")>]
 type BoxDecoration [<IsConst; NamedParams>] ([<Optional>] color: Color, [<Optional>] image: DecorationImage, [<Optional>] border: BoxBorder, [<Optional>] borderRadius: BorderRadiusGeometry, [<Optional>] boxShadow: BoxShadow[], [<Optional>] gradient: Gradient, [<Optional>] backgroundBlendMode: BlendMode, [<Optional>] shape: BoxShape) =
-  class end
+  inherit Decoration()
 
 /// https://api.flutter.dev/flutter/painting/FittedSizes-class.html
 [<ImportMember("package:flutter/painting.dart")>]
@@ -286,6 +289,7 @@ type EdgeInsetsGeometry [<IsConst>] () =
 /// https://api.flutter.dev/flutter/painting/EdgeInsets-class.html
 [<ImportMember("package:flutter/painting.dart")>]
 type EdgeInsets =
+  inherit EdgeInsetsGeometry
   [<IsConst>] static member fromLTRB(left: float, top: float, right: float, bottom: float): EdgeInsets = nativeOnly
   [<IsConst>] static member all(value: float): EdgeInsets = nativeOnly
   [<IsConst; NamedParams>] static member only([<Optional>] left: float, [<Optional>] top: float, [<Optional>] right: float, [<Optional>] bottom: float): EdgeInsets = nativeOnly
@@ -394,28 +398,27 @@ type ResizeImage [<IsConst; NamedParams(fromIndex=1)>] (imageProvider: ImageProv
 /// https://api.flutter.dev/flutter/painting/NetworkImage-class.html
 [<ImportMember("package:flutter/painting.dart")>]
 type NetworkImage [<IsConst; NamedParams(fromIndex=1)>] (url: string, [<Optional>] scale: float, [<Optional>] headers: Dictionary<string, string>) =
-  class end
+  inherit ImageProvider<obj>()
 
 // TODO dart:io
 // /// https://api.flutter.dev/flutter/painting/FileImage-class.html
 // [<ImportMember("package:flutter/painting.dart")>]
 // type FileImage [<IsConst; NamedParams(fromIndex=1)>] (file: File, [<Optional>] scale: float) =
-//   class end
 
 /// https://api.flutter.dev/flutter/painting/MemoryImage-class.html
 [<ImportMember("package:flutter/painting.dart")>]
 type MemoryImage [<IsConst; NamedParams(fromIndex=1)>] (bytes: byte[], [<Optional>] scale: float) =
-  class end
+  inherit ImageProvider<obj>()
 
 /// https://api.flutter.dev/flutter/painting/ExactAssetImage-class.html
 [<ImportMember("package:flutter/painting.dart")>]
 type ExactAssetImage [<IsConst; NamedParams(fromIndex=1)>] (assetName: string, [<Optional>] scale: float, [<Optional>] bundle: AssetBundle, [<Optional>] package: string) =
-  class end
+  inherit ImageProvider<obj>()
 
 /// https://api.flutter.dev/flutter/painting/AssetImage-class.html
 [<ImportMember("package:flutter/painting.dart")>]
 type AssetImage [<IsConst; NamedParams(fromIndex=1)>] (assetName: string, [<Optional>] bundle: AssetBundle, [<Optional>] package: string) =
-  class end
+  inherit ImageProvider<obj>()
 
 /// https://api.flutter.dev/flutter/painting/ImageInfo-class.html
 [<ImportMember("package:flutter/painting.dart")>]
