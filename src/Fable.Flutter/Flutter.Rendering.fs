@@ -911,7 +911,7 @@ type SliverGridDelegate [<IsConst>] () =
 /// https://api.flutter.dev/flutter/rendering/SliverGridDelegateWithFixedCrossAxisCount-class.html
 [<ImportMember("package:flutter/rendering.dart")>]
 type SliverGridDelegateWithFixedCrossAxisCount [<IsConst; NamedParams>] (crossAxisCount: int, [<Optional>] mainAxisSpacing: float, [<Optional>] crossAxisSpacing: float, [<Optional>] childAspectRatio: float, [<Optional>] mainAxisExtent: float) =
-  class end
+  inherit SliverGridDelegate()
 
 /// https://api.flutter.dev/flutter/rendering/SliverGridDelegateWithMaxCrossAxisExtent-class.html
 [<ImportMember("package:flutter/rendering.dart")>]

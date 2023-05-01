@@ -105,8 +105,7 @@ type Threshold [<IsConst>] (threshold: float) =
 
 /// https://api.flutter.dev/flutter/animation/Cubic-class.html
 [<ImportMember("package:flutter/animation.dart")>]
-type Cubic [<IsConst>] (a: float, b: float, c: float, d: float) =
-  class end
+type Cubic [<IsConst>] (a: float, b: float, c: float, d: float) = inherit Curve()
 
 /// https://api.flutter.dev/flutter/animation/ThreePointCubic-class.html
 [<ImportMember("package:flutter/animation.dart")>]

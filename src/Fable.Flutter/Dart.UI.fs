@@ -421,6 +421,26 @@ type Size [<IsConst>] (width: float, height: float) =
   [<IsConst>] static member fromRadius(radius: float): Size = nativeOnly
   [<IsConst>] static member zero: Size = nativeOnly
   [<IsConst>] static member infinite: Size = nativeOnly
+  member _.aspectRatio : float = nativeOnly
+  member _.flipped : Dart.Size = nativeOnly
+  member _.hashCode : int = nativeOnly
+  member _.height : float = nativeOnly
+  member _.isEmpty : bool = nativeOnly
+  member _.isFinite : bool = nativeOnly
+  member _.isInfinite : bool = nativeOnly
+  member _.longestSide : float = nativeOnly
+  member _.shortestSide : float = nativeOnly
+  member _.width : float = nativeOnly
+  member _.bottomCenter(origin: Dart.Offset) : Dart.Offset = nativeOnly
+  member _.bottomLeft(origin: Dart.Offset) : Dart.Offset = nativeOnly
+  member _.bottomRight(origin: Dart.Offset) : Dart.Offset = nativeOnly
+  member _.center(origin: Dart.Offset) : Dart.Offset = nativeOnly
+  member _.centerLeft(origin: Dart.Offset) : Dart.Offset = nativeOnly
+  member _.centerRight(origin: Dart.Offset) : Dart.Offset = nativeOnly
+  member _.contains(offset: Dart.Offset) : bool = nativeOnly
+  member _.topCenter(origin: Dart.Offset) : Dart.Offset = nativeOnly
+  member _.topLeft(origin: Dart.Offset) : Dart.Offset = nativeOnly
+  member _.topRight(origin: Dart.Offset) : Dart.Offset = nativeOnly
 
 /// https://api.flutter.dev/flutter/dart-ui/Rect-class.html
 [<ImportMember("dart:ui")>]
